@@ -3,8 +3,29 @@
 <script src="webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
 
 <script>
+
+    $(function() {
+        $("#subCategory").autocomplete({
+            source : function(request, response) {
+                $.ajax({
+                    url : "http://localhost:8888/getSubCategory",
+                    dataType : "json",
+                    data : {
+                        q : request.term
+                    },
+                    success : function(data) {
+                        //alert(data);
+                        console.log(data);
+                        response(data);
+                    }
+                });
+            },
+            minLength : 2
+        });
+    });
 
     $(function () {
         $("#createdDate").datepicker({
@@ -52,6 +73,11 @@
                      "data": null,
                      "render": function ( data, type, row, meta ) {
                        return data['category'];}
+                },
+                {
+                     "data": null,
+                     "render": function ( data, type, row, meta ) {
+                       return data['subCategory'];}
                 },
                 {
                      "data": null,

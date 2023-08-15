@@ -18,6 +18,7 @@
                <th></th>
                <th>Question</th>
                <th>Category</th>
+               <th>Sub Category</th>
                <th>Update</th>
                <th>Delete</th>
            </tr>

@@ -33,6 +33,12 @@
              <form:errors path="category" cssClass="text-warning" />
         </fieldset>
 
+      <fieldset class="form-group">
+         <form:label path="subCategory">Sub Category</form:label>
+         <form:input path="subCategory" type="text" class="form-control" autocomplete="off"
+          required="required" />
+         <form:errors path="subCategory" cssClass="text-warning" />
+        </fieldset>
 
       <button type="submit" class="btn btn-success">Save</button>
      </form:form>

@@ -16,4 +16,6 @@ public interface QuestionService {
     public void saveQuestion(QuestionEntity questionEntity);
 
     public List<QuestionEntity> fetchAllQuestionData();
+
+    public List<String> doAutoComplete(final String input);
 }

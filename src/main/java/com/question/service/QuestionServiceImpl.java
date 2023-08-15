@@ -1,6 +1,7 @@
 package com.question.service;
 
 import com.question.model.QuestionEntity;
+import com.question.repository.AutoCompleteDao;
 import com.question.repository.QuestionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,5 +39,10 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public List<QuestionEntity> fetchAllQuestionData() {
         return questionRepo.findAll();
+    }
+
+    @Override
+    public List<String> doAutoComplete(final String input) {
+        return AutoCompleteDao.getStrings(input);
     }
 }

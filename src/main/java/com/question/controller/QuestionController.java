@@ -1,14 +1,19 @@
 package com.question.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.question.model.QuestionEntity;
 import com.question.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,5 +69,21 @@ public class QuestionController {
 
         questionService.updateQuestion(questionEntity);
         return "redirect:/";
+    }
+
+    @GetMapping("/getSubCategory")
+    @ResponseBody
+    public ResponseEntity<String> doAutoComplete(@RequestParam("q") final String input) {
+        List<String> strings = questionService.doAutoComplete(input);
+
+        ObjectMapper mapper = new ObjectMapper();
+        String resp = "";
+
+        try {
+            resp = mapper.writeValueAsString(strings);
+        } catch (JsonProcessingException e) {
+        }
+
+        return new ResponseEntity<String>(resp, HttpStatus.OK);
     }
 }

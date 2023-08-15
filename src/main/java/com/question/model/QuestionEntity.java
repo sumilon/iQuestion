@@ -15,15 +15,18 @@ public class QuestionEntity {
     private String answer;
     private String category;
 
+    private String subCategory;
+
     public QuestionEntity() {
         super();
     }
 
-    public QuestionEntity(String question, String answer, String category) {
+    public QuestionEntity(String question, String answer, String category, String subCategory) {
         super();
         this.question = question;
         this.answer = answer;
         this.category = category;
+        this.subCategory = subCategory;
     }
 
     public long getId() {
@@ -56,6 +59,14 @@ public class QuestionEntity {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getSubCategory() {
+        return subCategory;
+    }
+
+    public void setSubCategory(String subCategory) {
+        this.subCategory = subCategory;
     }
 
     @Override
