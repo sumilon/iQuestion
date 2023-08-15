@@ -11,7 +11,7 @@
         $("#subCategory").autocomplete({
             source : function(request, response) {
                 $.ajax({
-                    url : "http://localhost:8888/getSubCategory",
+                    url : "/getSubCategory",
                     dataType : "json",
                     data : {
                         q : request.term
