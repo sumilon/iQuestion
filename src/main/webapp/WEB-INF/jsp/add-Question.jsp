@@ -2,7 +2,7 @@
 <%@ include file="common/navigation.jspf"%>
 <div class="container">
  <div class="row">
-  <div class="col-md-6 col-md-offset-3 ">
+  <div class="col-md-12 col-md-offset-0 ">
    <div class="panel panel-primary">
     <div class="panel-heading">Add Question</div>
     <div class="panel-body">
@@ -17,7 +17,7 @@
 
       <fieldset class="form-group">
          <form:label path="answer">Answer</form:label>
-         <form:textarea path="answer" rows="5" class="form-control" required="required" cssStyle="font-style:italic"/>
+         <form:textarea path="answer" rows="12" class="form-control" required="required" cssStyle="font-style:italic"/>
          <form:errors path="answer" cssClass="text-warning" />
         </fieldset>
 
@@ -33,12 +33,14 @@
              <form:errors path="category" cssClass="text-warning" />
         </fieldset>
 
+      <%/*
       <fieldset class="form-group">
          <form:label path="subCategory">Sub Category</form:label>
          <form:input path="subCategory" type="text" class="form-control" autocomplete="off"
           required="required" />
          <form:errors path="subCategory" cssClass="text-warning" />
         </fieldset>
+      */%>
 
       <button type="submit" class="btn btn-success">Save</button>
      </form:form>

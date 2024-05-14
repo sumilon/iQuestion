@@ -46,7 +46,6 @@
         return (
             '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
             '<tr>' +
-            '<td>Answer:</td>' +
             '<td>' +
             d.answer +
             '</td>' +
@@ -74,11 +73,11 @@
                      "render": function ( data, type, row, meta ) {
                        return data['category'];}
                 },
-                {
+                /*{
                      "data": null,
                      "render": function ( data, type, row, meta ) {
                        return data['subCategory'];}
-                },
+                },*/
                 {
                      "data": null,
                      "render": function ( data, type, row, meta ) {

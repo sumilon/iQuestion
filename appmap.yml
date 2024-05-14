@@ -1,0 +1,4 @@
+name: "iQuestion"
+appmap_dir: "tmp/appmap"
+packages:
+- path: "com.question"
